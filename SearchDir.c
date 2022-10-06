@@ -6,7 +6,7 @@
 #include <string.h>
 #include <stdlib.h>
  
-char*joint(char* head, char* name){
+char*joint(char* head, char* name){                                                        //将目录名进行链接
 	char* ret = (char*)malloc(sizeof(char)*(strlen(head)+strlen(name)+3));
 	int i=0;
 	int location = 0;
@@ -17,7 +17,7 @@ char*joint(char* head, char* name){
 	return ret;
 }
  
-void SearchDir(char* target, char* name){
+void SearchDir(char* target, char* name){                                                  //寻找name目录下有没有带有targe文件名的文件
 	DIR* dir = opendir(name);
         struct dirent* file;
         while((file = readdir(dir)) != NULL){
@@ -28,7 +28,7 @@ void SearchDir(char* target, char* name){
 		        printf("%s\n", nextname);
 		}
 		lstat(nextname, &filebuf);
-		if(S_ISDIR(filebuf.st_mode)){
+		if(S_ISDIR(filebuf.st_mode)){                                             //如果此文件是目录文件则进行递归
 			SearchDir(target, nextname);
 		}
         }
