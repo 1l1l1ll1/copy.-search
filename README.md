@@ -35,3 +35,5 @@ DIR 结构（目录流）是一个内部结构，其作用类似于FILE结构。
 若成功则返回结构dirent的指针，若失败返回NULL。
 ## 2.2 运行截图
 ![image](https://user-images.githubusercontent.com/114986300/194263093-1f4feeca-ef4b-467c-9d5b-671d468e33dc.png)
+
+# 3.对文件内容进行检索
